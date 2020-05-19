@@ -28,6 +28,9 @@ setup(
         's3fs>=0.1.0',
         'dask>0.20.0'
     ],
+    extras_require={
+        'dask': ['toolz','dask[dataframe]'],
+        'pipe': ['d6tpipe', 'jinja2']},
     test_requires=[
         'boto3==1.7.84',
         'botocore==1.10.84',

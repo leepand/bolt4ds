@@ -35,6 +35,19 @@ Learn more at [https://github.com/leepand/bolt4ds](https://github.com/leepand/bo
 
 如果你有大量的稀疏数据，如点击流数据、分类时间序列、日志数据或类似的稀疏数据，这个包可能对你特别有用。
 
+## 数据提取与存储
+
+### 功能包括
+
+* 用于postgres和mysql的快速pd.to_sql()
+* 快速检查跨文件的列是否一致
+* 修复新增/缺失的列
+* 修复重命名的列
+* 检查Excel选项卡在不同文件中的一致性
+* Excel到CSV转换器(包括多表支持)
+* 超出了处理大文件的核心功能
+* 导出为CSV、parquet、SQL、pandas数据框架
+
 ## 安装
 
 Install with pip:
