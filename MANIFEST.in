@@ -1,0 +1,2 @@
+include versioneer.py
+include bolt4ds/_version.py
