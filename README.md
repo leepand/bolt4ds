@@ -10,7 +10,7 @@ Accelerate data science - Python Libraries
 bolt4ds简化了这些任务，使您可以体验到高达10倍的生产力提升。
 
 * **管理数据流程**: 快速构建高效的数据科学工作流程
-* **数据稀疏化操作**: 建立在pandas和scipy之上，提供类似DataFrame的API来处理稀疏数据。
+* **稀疏数据处理工具箱**: 建立在pandas和scipy之上，提供类似DataFrame的API来处理稀疏数据。
 * **数据提取与存储**: 快速摄取杂乱的原始CSV和XLS文件到pandas、SQL等。
 * **连接数据**: 使用模糊连接快速组合多个数据集
 * **项目模板**: 为数据科学提供标准模板
@@ -29,8 +29,16 @@ bolt4ds简化了这些任务，使您可以体验到高达10倍的生产力提�
 
 Learn more at [https://github.com/leepand/bolt4ds](https://github.com/leepand/bolt4ds)
 
-## 数据稀疏化操作
+## 稀疏数据处理工具箱
 
 许多任务，特别是在数据分析和机器学习领域，常用稀疏的数据结构来支持高维数据的输入。Pandas有自己的稀疏数据结构的实现。不幸的是，这种结构在我们经常使用的分组比和聚合中表现相当糟糕。此外，在Pandas SparseDataFrame上进行groupby操作会返回一个稠密结构的DataFrame。这使得在多个文件上进行groupby操作的链式操作非常繁琐，而且效率较低、占用大量内存。在对scipy.sparse csrr matrr上的许多函数调用进行了链式化后，我们决定启动这个项目，这些函数涉及到指数和列名的处理，以产生一个稀疏数据管道。
 
 如果你有大量的稀疏数据，如点击流数据、分类时间序列、日志数据或类似的稀疏数据，这个包可能对你特别有用。
+
+## 安装
+
+Install with pip:
+
+```commandline
+pip install .
+```
