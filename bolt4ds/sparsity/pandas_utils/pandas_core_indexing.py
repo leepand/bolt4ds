@@ -18,8 +18,10 @@ from .dtypes.common import (
 from pandas.core.dtypes.missing import isna, _infer_fill_value
 from pandas.errors import AbstractMethodError
 from pandas.util._decorators import Appender
-
-from pandas.core.index import Index, MultiIndex
+try:
+    from pandas import Index, MultiIndex
+except:
+    from pandas.core.index import Index, MultiIndex
 
 import bolt4ds.sparsity.pandas_utils.common as com
 from pandas._libs.indexing import _NDFrameIndexerBase
