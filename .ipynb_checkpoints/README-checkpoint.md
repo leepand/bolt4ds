@@ -73,7 +73,7 @@ bolt4ds.utils模块允许你测试连接精度，并快速识别和分析连接�
 
 ### 示例
 
- ```commandline
+```commandline
 
 import logging
 import numpy as np
@@ -120,7 +120,8 @@ feijiandu.transform(df2[features])
 
 feijiandu.data_monitor.schema
 
- ```
+```
+
 
 ## 安装
 
