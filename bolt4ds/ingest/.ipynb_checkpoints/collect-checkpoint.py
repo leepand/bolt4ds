@@ -15,7 +15,7 @@ import uuid
 submit = True
 ignore_errors = True
 profile = 'prod'
-host = 'https://pipe.bolt4ds.tech'
+host = 'https://pipe.bolt4ds.tech2'
 endpoint = '/v1/api/collect/'
 source = 'd6tcollect'
 
