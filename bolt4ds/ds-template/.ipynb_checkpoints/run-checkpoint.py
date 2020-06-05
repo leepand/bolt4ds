@@ -6,6 +6,7 @@ d6tflow.preview(tasks.TaskTrain())
 
 # Execute the model training task including dependencies. See https://d6tflow.readthedocs.io/en/latest/run.html
 d6tflow.run(tasks.TaskTrain())
+#d6tflow.run(GetLoginData(),scheduler_host="52.221.203.159",scheduler_port=1261,local_scheduler=False)
 
 # use output
 visualize.accuracy()

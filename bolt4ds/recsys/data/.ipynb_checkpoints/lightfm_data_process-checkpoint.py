@@ -7,11 +7,16 @@ import scipy.sparse as sp
 import sklearn.preprocessing
 from sklearn.feature_extraction import DictVectorizer
 
-from web.py3helpers import (
-    is_iter,
-    iteritems,
-    itervalues,
-)
+"""Utilities for make the code run both on Python2 and Python3.
+"""
+
+# Dictionary iteration
+iterkeys = lambda d: iter(d.keys())
+itervalues = lambda d: iter(d.values())
+iteritems = lambda d: iter(d.items())
+
+is_iter = lambda x: x and hasattr(x, "__next__")
+
 
 def dictreverse(mapping):
     """

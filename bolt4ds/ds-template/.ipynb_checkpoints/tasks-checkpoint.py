@@ -13,6 +13,14 @@ import cfg
 class TaskGetData(d6tflow.tasks.TaskPqPandas):  # save dataframe as parquet, see https://d6tflow.readthedocs.io/en/latest/targets.html
     dt_start = luigi.DateParameter(default=cfg.dt_start) # workflow parameters. See https://d6tflow.readthedocs.io/en/latest/advparam.html
     dt_end = luigi.DateParameter(default=cfg.dt_end)
+    scheduler_host = luigi.Parameter(
+        default='localhost',
+        description='Hostname of machine running remote scheduler',
+        config_path=dict(section='core', name='default-scheduler-host'))
+    scheduler_port = luigi.IntParameter(
+        default=8082,
+        description='Port of remote scheduler api process',
+        config_path=dict(section='core', name='default-scheduler-port'))
 
     def run(self):
         iris = sklearn.datasets.load_iris()
