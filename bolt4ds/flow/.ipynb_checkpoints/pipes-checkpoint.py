@@ -2,7 +2,7 @@ import bolt4ds.flow as d6tflow
 import bolt4ds.ingest.collect as d6tcollect
 
 try:
-    import d6tpipe
+    import bolt4ds.pipe as d6tpipe
 except:
     ModuleNotFoundError("Optional requirement d6tpipe not found, install with `pip install d6tpipe`")
 

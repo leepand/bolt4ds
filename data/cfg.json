@@ -1,0 +1,45 @@
+{
+    "default": {
+        "server": "https://pipe.databolt.tech",
+        "filerepo": "~/d6tpipe/files/default",
+        "filereporoot": "~/d6tpipe",
+        "filedb": "~/d6tpipe/files/default/.filedb.json"
+    },
+    "logs": {
+        "server": "https://pipe.databolt.tech",
+        "filerepo": "~/d6tpipe/files/logs",
+        "filereporoot": "~/d6tpipe",
+        "filedb": "~/d6tpipe/files/logs/.filedb.json"
+    },
+    "user2": {
+        "server": "https://pipe.databolt.tech",
+        "filerepo": "~/d6tpipe/files/user2",
+        "filereporoot": "~/d6tpipe",
+        "filedb": "~/d6tpipe/files/user2/.filedb.json"
+    },
+    "projectA": {
+        "filerepo": "/Users/leepand/Downloads/github/bolt4ds/data/files/projectA",
+        "server": "https://pipe.databolt.tech",
+        "filereporoot": "/Users/leepand/Downloads/github/bolt4ds/data",
+        "filedb": "/Users/leepand/Downloads/github/bolt4ds/data/files/projectA/.filedb.json"
+    },
+    "projectB": {
+        "filerepo": "/Users/leepand/Downloads/github/bolt4ds/data/files/projectB",
+        "server": "https://pipe.databolt.tech",
+        "filereporoot": "/Users/leepand/Downloads/github/bolt4ds/data",
+        "filedb": "/Users/leepand/Downloads/github/bolt4ds/data/files/projectB/.filedb.json"
+    },
+    "cloud": {
+        "filerepo": "/Users/leepand/Downloads/github/bolt4ds/data/files/cloud",
+        "server": "https://pipe.databolt.tech",
+        "filereporoot": "/Users/leepand/Downloads/github/bolt4ds/data",
+        "filedb": "/Users/leepand/Downloads/github/bolt4ds/data/files/cloud/.filedb.json"
+    },
+    "onprem": {
+        "filerepo": "/Users/leepand/Downloads/github/bolt4ds/data/files/onprem",
+        "server": "https://pipe.databolt.tech",
+        "filereporoot": "/Users/leepand/Downloads/github/bolt4ds/data",
+        "filedb": "/Users/leepand/Downloads/github/bolt4ds/data/files/onprem/.filedb.json",
+        "key": "4f6186a5-026f-4e66-98c4-bbaf16d05103"
+    }
+}

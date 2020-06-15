@@ -5,7 +5,7 @@ from setuptools import find_packages
 import versioneer
 
 packages = find_packages()
-packages.remove('bolt4ds.sparsity.test')
+#packages.remove('bolt4ds.sparsity.test')
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
