@@ -1,2 +1,4 @@
 include versioneer.py
 include bolt4ds/_version.py
+include bolt4ds/model_db/init_db.sql
+include README.md

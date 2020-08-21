@@ -1,8 +1,0 @@
-{
-    "default": {
-        "server": "https://pipe.databolt.tech",
-        "filerepo": "~/d6tpipe/files/default",
-        "filereporoot": "~/d6tpipe",
-        "filedb": "~/d6tpipe/files/default/.filedb.json"
-    }
-}

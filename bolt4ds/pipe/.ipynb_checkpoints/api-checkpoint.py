@@ -11,7 +11,7 @@ from pathlib import Path
 
 import jwt
 
-import d6tcollect
+import bolt4ds.collect.collect as d6tcollect
 
 from .http_client import client as python_http_client
 from .utils.utils import ClientTiny, loadjson, _dict_sort
