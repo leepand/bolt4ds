@@ -10,3 +10,19 @@ print('Welcome to filepipe for ds!')# We hope you find it useful. If you run int
 
 import bolt4ds.collect as bolt4dscollect
 bolt4dscollect.submit = False
+import os
+
+class ModelFile(object):
+    def __init__(self,model_name,version,model_path):
+        self.remote_rel_path = '{}-v{}'.format(model_name, version)
+        self.model_name = model_name
+        self.config_file_path = os.path.join(model_path,"cfg.json")
+        api.ConfigManager(profile=model_name,
+                                      filecfg=self.config_file_path).init({'filerepo':model_path})
+        
+    def filepipe(self):
+        _pipe = PipeLocal(self.remote_rel_path,
+                                     profile=self.model_name,
+                                     filecfg=self.config_file_path
+                                    )
+        return _pipe
