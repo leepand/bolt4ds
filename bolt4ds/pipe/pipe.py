@@ -328,8 +328,10 @@ class PipeBase(object, metaclass=d6tcollect.Collect):
             if delete_all:
                 shutil.rmtree(self.dir, ignore_errors=ignore_errors)
             else:
-                [f.unlink() for f in self.filepaths()]
-            self.dbfiles.purge()
+                #[f.unlink() for f in self.filepaths()]
+                [os.unlink(os.path.join(self.dir,f)) for f in files]
+            #self.dbfiles.purge()
+            #self.dbfiles.trunacte()
 
 class PipeLocal(PipeBase, metaclass=d6tcollect.Collect):
     """

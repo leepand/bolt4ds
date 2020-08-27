@@ -20,7 +20,7 @@ class ConfigManager(object):
 
     """
 
-    Manage local config. The config is stored in JSON and can be edited directly `filecfg` location, by default '~/d6tpipe/cfg.json'
+    Manage local config. The config is stored in JSON and can be edited directly `filecfg` location, by default '~/bolt4dspipe/cfg.json'
 
     Args:
         profile (str): name of profile to use
@@ -28,13 +28,13 @@ class ConfigManager(object):
 
     """
 
-    def __init__(self, profile=None, filecfg='~/d6tpipe/cfg.json'):
+    def __init__(self, profile=None, filecfg='~/bolt4dspipe/cfg.json'):
         self.profile = 'default' if profile is None else profile
         if str(filecfg).startswith('~'):
             filecfg = os.path.expanduser(filecfg)
         self.filecfg = filecfg
 
-    def init(self, config=None, server='https://pipe.databolt.tech', reset=False):
+    def init(self, config=None, server='http://localhost', reset=False):
         """
 
         Initialize config with content
@@ -56,7 +56,7 @@ class ConfigManager(object):
         if 'server' not in config:
                 config['server'] = server
         if 'filerepo' not in config:
-            config['filerepo'] = '~/d6tpipe'
+            config['filerepo'] = '~/bolt4dspipe'
         p = Path(config['filerepo'])
         p2 = p/'files/{}/'.format(self.profile)
         config['filereporoot'] = str(p)
@@ -268,7 +268,7 @@ class APILocal(_APIBase,metaclass=d6tcollect.Collect):
 
     """
 
-    def __init__(self, config=None, profile=None, filecfg='~/d6tpipe/cfg.json'):
+    def __init__(self, config=None, profile=None, filecfg='~/bolt4dspipe/cfg.json'):
         super().__init__(config,profile,filecfg)
         self.cnxn = ClientTiny(self.config['filedb'])
         self.mode = 'local'
@@ -288,7 +288,7 @@ class APIClient(_APIBase, metaclass=d6tcollect.Collect):
 
     """
 
-    def __init__(self, token='config', config=None, profile=None, filecfg='~/d6tpipe/cfg.json'):
+    def __init__(self, token='config', config=None, profile=None, filecfg='~/bolt4dspipe/cfg.json'):
         super().__init__(config,profile,filecfg)
         if token=='config':
             self.token = self.cfg_profile.get('token',None)
@@ -395,7 +395,7 @@ class APIClient(_APIBase, metaclass=d6tcollect.Collect):
 
 
 @d6tcollect.collect
-def list_profiles(filecfg='~/d6tpipe/cfg.json'):
+def list_profiles(filecfg='~/bolt4dspipe/cfg.json'):
     if str(filecfg).startswith('~'):
         filecfg = os.path.expanduser(filecfg)
     print(open(filecfg).read())

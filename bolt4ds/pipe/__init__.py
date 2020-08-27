@@ -13,16 +13,19 @@ bolt4dscollect.submit = False
 import os
 
 class ModelFile(object):
-    def __init__(self,model_name,version,model_path):
+    def __init__(self,model_name,version,center_path=None):
         self.remote_rel_path = '{}-v{}'.format(model_name, version)
         self.model_name = model_name
-        self.config_file_path = os.path.join(model_path,"cfg.json")
+        if not center_path:
+            center_path = "~/bolt4dspipe"
+
+        self.config_file_path = os.path.join(center_path,"cfg.json")
         api.ConfigManager(profile=model_name,
-                                      filecfg=self.config_file_path).init({'filerepo':model_path})
+                          filecfg=self.config_file_path).init({'filerepo':center_path})
         
     def filepipe(self):
         _pipe = PipeLocal(self.remote_rel_path,
-                                     profile=self.model_name,
-                                     filecfg=self.config_file_path
-                                    )
+                          profile=self.model_name,
+                          filecfg=self.config_file_path
+                         )
         return _pipe
