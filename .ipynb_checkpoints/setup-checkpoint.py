@@ -11,6 +11,11 @@ except ImportError:
 
 import versioneer
 
+from setuptools.extension import Extension
+
+ext_modules = [Extension("quickle", ["quickle.c"])]
+
+
 packages = find_packages()
 #packages.remove('bolt4ds.sparsity.test')
 
@@ -71,6 +76,7 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/leepand/bolt4ds",
     packages=packages,
+    #ext_modules=ext_modules,
     include_package_data = True,
     #cmdclass=versioneer.get_cmdclass(),
     install_requires=requirements,

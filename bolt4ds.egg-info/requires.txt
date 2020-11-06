@@ -1,9 +1,0 @@
-click==7.1.2
-
-[dask]
-toolz
-dask[dataframe]
-
-[pipe]
-d6tpipe
-jinja2

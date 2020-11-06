@@ -133,7 +133,7 @@ class ConfigManager(object):
 
 class _APIBase(metaclass=d6tcollect.Collect):
 
-    def __init__(self, config=None, profile=None, filecfg='~/d6tpipe/cfg.json'):
+    def __init__(self, config=None, profile=None, filecfg='~/bolt4dspipe/cfg.json'):
         self.profile = 'default' if profile is None else profile
         if config is None:
             self.configmgr = ConfigManager(filecfg=filecfg, profile=self.profile)

@@ -266,6 +266,36 @@ class PipeBase(object, metaclass=d6tcollect.Collect):
         """
         copytree(dir,self.dir, move)
 
+    def pull_file(self,file,save_path,move=False):
+        local_path=Path(os.path.join(save_path,"pull"))
+        local_path.mkdir(parents=True, exist_ok=True)
+        p =local_path/file
+        
+        dtmod = datetime.fromtimestamp(p.stat().st_mtime)
+        crc = filemd5(p)
+        file_attr = {'modified_at': dtmod, 'size': p.stat().st_size, 'crc': crc}
+        filespull_size = file_attr["size"]
+        modified_at = file_attr["modified_at"]
+        print('pulling file size info: {:.2f}MB'.format(filespull_size / 2 ** 20))
+        print('pulling file modified at: {}'.format(modified_at))
+        
+        if move:
+            shutil.move(file,local_path)
+        else:
+            shutil.copy(file,local_path)
+        
+    def pull_dir(self, dir, move=False):
+        """
+
+        Import a directory including subdirs
+
+        Args:
+            dir (str): directory
+            move (bool): move or copy
+
+        """
+        copytree(self.dir,dir, move)
+
     def delete_files(self, files=None, confirm=True, all_local=None):
         """
 
@@ -347,7 +377,7 @@ class PipeLocal(PipeBase, metaclass=d6tcollect.Collect):
 
     """
 
-    def __init__(self, name, config=None, profile=None, filecfg='~/d6tpipe/cfg.json', sortby='filename'):
+    def __init__(self, name, config=None, profile=None, filecfg='~/bolt4dspipe/cfg.json', sortby='filename'):
         super().__init__(name, sortby)
         self.profile = 'default' if profile is None else profile
         if config is None:
