@@ -2,9 +2,9 @@ import os
 from typing import Union, Tuple, Optional
 from collections import Iterator
 
-from aimrecords.record_storage.writer import Writer
-from aimrecords.record_storage.reader import ReaderIterator
-from aimrecords.artifact_storage.consts import (
+from ..record_storage.writer import Writer
+from ..record_storage.reader import ReaderIterator
+from .consts import (
     STORAGE_DIR_NAME,
 )
 
